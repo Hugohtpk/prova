@@ -1,0 +1,37 @@
+void main () {
+
+    int cont = 0;
+    int tempoDeEspera = 0;
+    int espera = 0;
+    double tempoMedio = 0;
+
+    while (espera >= 0){
+        espera = Integer.parseInt(IO.readln("Digite o tempo de espera: "));
+        if (espera < 0) { 
+            IO.println("Numero negativo");
+        }
+        
+        else{
+            tempoDeEspera = espera + tempoDeEspera;
+            cont++;
+        }
+
+        
+    }
+    
+    IO.println("Tempo de espera total: " + tempoDeEspera + " Total de clientes: " + cont);
+    tempoMedio = tempoDeEspera / cont;
+    System.out.printf("Tempo medio por cliente: %,.2f%n", tempoMedio);
+    if(tempoMedio <= 10){
+        IO.println("Atendimento Ágil!");
+    }
+    else if(tempoMedio > 10 && tempoMedio <= 20){ 
+        IO.println("Atendimento Regular");
+    }
+    else{
+        IO.println("Atendimento Lento: Reforçar a Equipe");
+    }
+    
+
+
+}
